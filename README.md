@@ -15,5 +15,5 @@ You may import that project with Intellij IDEA or Android Studio
 ## Usage
 
 ```
-$ ./sbt packageDebug
+$ ./sbt android:packageDebug
 ```
