@@ -4,8 +4,6 @@
 
 Android project with sbt 0.13.8, Scala 2.11.6 and android-sdk-plugin 1.3.19
 
-You may import that project with Intellij IDEA or Android Studio
-
 ### Requirements
 
 * Java 1.7+
@@ -22,10 +20,26 @@ $ ./mac_install_sdk.sh
 $ ./linux_install_sdk.sh
 ```
 
-### Usage
+### Usage in console
 
 ```
 $ ./sbt android:packageDebug
 ```
 
+### Usage in IDE
 
+You have to import project from Intellij IDEA (I use version 14.1) or Android Studio
+
+Choose SBT project and Android SDK like this
+
+![Import android project](https://cloud.githubusercontent.com/assets/3140251/7283309/5998b608-e93e-11e4-95d1-353c8c2055f2.png)
+
+Probably you want to run project from IDE, so just make new "Android application" run configuration
+
+**Warning!**
+
+In "Before launch" section you should remove "Make" command and add "Run external tool" with `./sbt android:packageDebug` command
+
+![Android application configuration](https://cloud.githubusercontent.com/assets/3140251/7283334/83eeb22c-e93e-11e4-91c1-ac0394082827.png)
+
+Also you may want to use a good emulator, so I prefer [Genymotion](https://www.genymotion.com) emulator
