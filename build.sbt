@@ -13,3 +13,5 @@ scalacOptions ++= Seq("-target:jvm-1.7", "-encoding", "UTF-8", "-feature", "-unc
 javacOptions ++= Seq("-source", "1.7", "-target", "1.7", "-Xlint:unchecked", "-Xlint:deprecation")
 
 libraryDependencies += "com.android.support" % "appcompat-v7" % "21.0.2"
+
+proguardOptions in Android += "-keepattributes Signature"
