@@ -22,8 +22,16 @@ $ ./linux_install_sdk.sh
 
 ### Usage in console
 
+To compile and build 
+
 ```
 $ ./sbt android:packageDebug
+```
+
+To run test with Robolectric (no needed device) just type
+
+```
+$ ./sbt test
 ```
 
 ### Usage in IDE
