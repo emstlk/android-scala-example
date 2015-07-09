@@ -2,10 +2,10 @@ package com.myapp.test
 
 import android.widget.TextView
 import com.myapp.{MainActivity, R}
+import org.junit.Test
 import org.junit.runner.RunWith
-import org.junit.{Before, Test}
 import org.robolectric.annotation.Config
-import org.robolectric.{Robolectric, RobolectricTestRunner}
+import org.robolectric.{Robolectric, RobolectricTestRunner, RuntimeEnvironment}
 import org.scalatest.Matchers
 import org.scalatest.junit.JUnitSuite
 
@@ -13,14 +13,13 @@ import org.scalatest.junit.JUnitSuite
 @Config(
   manifest = "src/main/AndroidManifest.xml",
   resourceDir = "../../target/android-bin/resources/res",
-  emulateSdk = 16,
-  reportSdk = 16
+  sdk = Array(21)
 )
 class MainTest extends JUnitSuite with Matchers {
-  
+
   @Test
   def simpleCase() {
-    val context = Robolectric.application.getApplicationContext
+    val context = RuntimeEnvironment.application.getApplicationContext
     val mainActivity = Robolectric.setupActivity(classOf[MainActivity])
     val view = mainActivity.findViewById(R.id.simpleTextView).asInstanceOf[TextView]
     view.getText.toString shouldBe context.getString(R.string.welcome)
